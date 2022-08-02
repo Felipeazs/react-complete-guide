@@ -1,7 +1,7 @@
 import Card from '../UI/Card'
 
 import './ExpenseItem.css'
-import ExpanseDate from './ExpanseDate'
+import ExpanseDate from './ExpenseDate'
 
 const ExpenseItem = (props) => {
   return (

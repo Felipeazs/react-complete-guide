@@ -29,7 +29,7 @@ const ExpenseForm = (props) => {
     setUserInput((prevState) => {
       return {
         ...prevState,
-        enteredDate: event.target.value,
+        enteredDate: new Date(event.target.value),
       }
     })
   }
@@ -37,7 +37,12 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault()
 
-    const expenseData = userInput
+    const expenseData = {
+      title: userInput.enteredTitle,
+      amount: userInput.enteredAmount,
+      date: userInput.enteredDate,
+    }
+    console.log(expenseData)
 
     props.onSaveExpenseData(expenseData) // Comunicación hijo-padre
 
