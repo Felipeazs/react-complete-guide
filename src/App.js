@@ -1,8 +1,8 @@
-
 import './App.css';
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: 'e1',
@@ -24,12 +24,16 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log('expense App.js:')
+    console.log(expense)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>ReactJs App</h1>
-        <Expenses expenses={expenses} />
-      </header>
+      <NewExpense onNewExpense={addExpenseHandler} />
+      <Expenses expenses={expenses} />
     </div>
   );
 }
