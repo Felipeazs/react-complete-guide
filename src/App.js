@@ -1,6 +1,6 @@
 
 import './App.css';
-import ExpenseItem from './components/ExpenseItem';
+import Expenses from './components/Expenses';
 
 function App() {
   const expenses = [
@@ -27,11 +27,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Inicio ReactJs App</h1>
-        {expenses.map((expense) => {
-          return <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} key={expense.id} />
-        })}
-
+        <h1>ReactJs App</h1>
+        <Expenses expenses={expenses} />
       </header>
     </div>
   );
