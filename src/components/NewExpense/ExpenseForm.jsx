@@ -40,11 +40,9 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: userInput.enteredTitle,
-      amount: userInput.enteredAmount,
+      amount: +userInput.enteredAmount,
       date: new Date(userInput.enteredDate),
     }
-
-    console.log(expenseData)
 
     props.onSaveExpenseData(expenseData) // Comunicación hijo-padre
 
